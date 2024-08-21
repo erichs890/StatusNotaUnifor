@@ -11,6 +11,7 @@ function quantasNotas(numeroDeNotas) {
 
         const av1Label = document.createElement("label");
         av1Label.textContent = "AV1:";
+        av1Label.className = "nota1Label"
 
         const nota1 = document.createElement("input");
         nota1.type = "Number";
@@ -51,12 +52,16 @@ function quantasNotas(numeroDeNotas) {
 
         const av1Label = document.createElement("label");
         av1Label.textContent = "AV1:";
+        av1Label.className = "nota1Label"
+
         const nota1 = document.createElement("input");
         nota1.type = "Number";
         nota1.classList.add("nota1");
 
         const av2Label = document.createElement("label");
         av2Label.textContent = "AV2:";
+        av2Label.className = "nota2Label"
+
         const nota2 = document.createElement("input");
         nota2.type = "Number";
         nota2.classList.add("nota2");
@@ -83,12 +88,15 @@ function quantasNotas(numeroDeNotas) {
 
         const av1Label = document.createElement("label");
         av1Label.textContent = "AV1:";
+        av1Label.className = "nota1Label"
         const nota1 = document.createElement("input");
         nota1.type = "Number";
         nota1.classList.add("nota1");
 
         const av2Label = document.createElement("label");
         av2Label.textContent = "AV2:";
+        av2Label.className = "nota2Label"
+
         const nota2 = document.createElement("input");
         nota2.type = "Number";
         nota2.classList.add("nota2");
