@@ -135,7 +135,7 @@ function verQuantoFalta(nota1) {
         body.style.backgroundColor = "green";
         divFaltando.innerHTML = "Já pode fazer a AV3";
     } else {
-        body.style.backgroundColor = "red";
+        body.style.backgroundColor = "yellow";
         divFaltando.innerHTML = `Faltam ${falta.toFixed(2)} pontos para fazer a AV3`;
     }
 }
