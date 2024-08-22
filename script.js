@@ -140,30 +140,40 @@ function verQuantoFalta(nota1) {
     }
 }
 
-function calcularMedia(nota1, nota2, nota3) {
-    const body = document.querySelector("body")
-
-    if (nota3 < 4) {
-        body.style.backgroundColor = "red"
-    } else {
-        const media = (nota1 + nota2 + nota3) / 3
-        if (media < 5) {
-            body.style.backgroundColor = "red"
-        } else {
-            body.style.backgroundColor = "green"
-        }
-    }
-}
 
 function estouNaAV3(nota1, nota2) {
     const body = document.querySelector("body")
     const media = (nota1 + nota2) / 2
-
+    
     if (media >= 4) {
         body.style.backgroundColor = "green"
         divFaltando.innerHTML = "Você pode fazer a AV3"
     } else {
         divFaltando.innerHTML = "Você não pode fazer a AV3"
         body.style.backgroundColor = "red"
+    }
+}
+
+function calcularMedia(nota1, nota2, nota3) {
+    const body = document.querySelector("body")
+
+    if (nota3 < 4) {
+        body.style.backgroundColor = "red"
+        divFaltando.textContent = "Infelizmente você não passou!"
+    } else {
+        const media1 = (nota1 + nota2) / 2
+        if(media1 < 4){
+        body.style.backgroundColor = "red"
+        divFaltando.textContent = "Infelizmente você não passou!"
+        }else{
+            const media = (nota1+nota2+nota3)/3
+            if (media < 5) {
+                body.style.backgroundColor = "red"
+                 divFaltando.textContent = "Infelizmente você não passou!"              
+            } else {
+                body.style.backgroundColor = "green"
+                divFaltando.textContent = "Parabéns, você passou!"
+            }
+        }
     }
 }
