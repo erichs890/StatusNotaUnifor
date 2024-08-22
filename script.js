@@ -120,6 +120,7 @@ function quantasNotas(numeroDeNotas) {
         })
     } else if(numeroDeNotas>3) {
         alert("Adicione no máximo 3 notas")
+        numNotas.value = ""
     }
 }
 
