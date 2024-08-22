@@ -118,7 +118,7 @@ function quantasNotas(numeroDeNotas) {
         botaoMedia.addEventListener("click", () => {
             calcularMedia(parseFloat(nota1.value), parseFloat(nota2.value), parseFloat(nota3.value))
         })
-    } else {
+    } else if(numeroDeNotas>3) {
         alert("Adicione no máximo 3 notas")
     }
 }
