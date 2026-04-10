@@ -1,21 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Status Nota</title>
+    <title>Status Nota - Unifor</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Verifique se você passou ou não na Unifor</h1>
-    <label for="numNotas">Quantas notas sua disciplina pede</label>
-    <input type="number" id="numNotas" min="1" max="3" required>
-    <div id="notasInputs"></div>
-    <div id="falta"></div>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <div class="logo">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                        <path d="M6 12v5c0 2 4 3 6 3s6-1 6-3v-5"/>
+                    </svg>
+                    <h1>Status Nota Unifor</h1>
+                </div>
+                <p class="subtitle">Verifique se voce passou ou nao na disciplina</p>
+            </div>
 
-    <footer>
-        <p>Feito por: Erich Schlaepfer</p>
-    </footer>
-   <script src="script.js"></script>
+            <div class="card-body">
+                <div class="field">
+                    <label for="numNotas">Quantas notas sua disciplina pede?</label>
+                    <div class="select-wrapper">
+                        <select id="numNotas">
+                            <option value="" disabled selected>Selecione...</option>
+                            <option value="1">1 nota (AV1)</option>
+                            <option value="2">2 notas (AV1 + AV2)</option>
+                            <option value="3">3 notas (AV1 + AV2 + AV3)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="notasInputs"></div>
+
+                <div id="falta"></div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Feito por <strong>Erich Schlaepfer</strong></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
