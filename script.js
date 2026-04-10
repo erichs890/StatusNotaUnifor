@@ -2,6 +2,39 @@ const numNotas = document.querySelector("#numNotas")
 const notasInputDiv = document.querySelector("#notasInputs")
 const divFaltando = document.querySelector("#falta")
 
+// Ripple effect on buttons
+document.addEventListener("click", (e) => {
+    const btn = e.target.closest(".btn")
+    if (!btn) return
+    const ripple = document.createElement("span")
+    ripple.classList.add("ripple")
+    const rect = btn.getBoundingClientRect()
+    const size = Math.max(rect.width, rect.height)
+    ripple.style.width = ripple.style.height = size + "px"
+    ripple.style.left = (e.clientX - rect.left - size / 2) + "px"
+    ripple.style.top = (e.clientY - rect.top - size / 2) + "px"
+    btn.appendChild(ripple)
+    ripple.addEventListener("animationend", () => ripple.remove())
+})
+
+// Confetti burst for success
+function launchConfetti() {
+    const colors = ["#16a34a", "#22c55e", "#4ade80", "#2563eb", "#facc15", "#f97316"]
+    for (let i = 0; i < 30; i++) {
+        const piece = document.createElement("div")
+        piece.classList.add("confetti-piece")
+        piece.style.background = colors[Math.floor(Math.random() * colors.length)]
+        piece.style.left = (30 + Math.random() * 40) + "vw"
+        piece.style.top = (20 + Math.random() * 20) + "vh"
+        piece.style.animationDelay = (Math.random() * 0.3) + "s"
+        piece.style.animationDuration = (0.8 + Math.random() * 0.6) + "s"
+        piece.style.width = (5 + Math.random() * 6) + "px"
+        piece.style.height = (5 + Math.random() * 6) + "px"
+        document.body.appendChild(piece)
+        piece.addEventListener("animationend", () => piece.remove())
+    }
+}
+
 function criarCampoNota(label) {
     const field = document.createElement("div")
     field.classList.add("nota-field")
@@ -40,6 +73,10 @@ function mostrarResultado(mensagem, tipo) {
 
     box.innerHTML = `<span>${icons[tipo] || ""}</span> ${mensagem}`
     divFaltando.appendChild(box)
+
+    if (tipo === "success") {
+        launchConfetti()
+    }
 }
 
 function quantasNotas(numeroDeNotas) {
